@@ -10,7 +10,7 @@ def findMe():
     print("your password for facebook:")
     Password = input("")
 
-    print("lokking for user...")
+    print("looking for user...")
     client = Client(int(Number), Password)
 
     print("Own id: {}".format(client.uid))
@@ -28,11 +28,8 @@ def findUser():
     users = client.searchForUsers(target)
     user = users[0]
 
-    print("User's ID: {}".format(user.uid))
     print("User's name: {}".format(user.name))
     print("User's profile picture URL: {}".format(user.photo))
-    print("User's main URL: {}".format(user.url))
-
     definMessege()
 
 
@@ -49,9 +46,10 @@ def definMessege():
 def sendIt():
     print("how meany times do you want to send it?:")
     x = input("")
-    i = 0
 
     print("spaming...")
+    
+    i = 0
     while i < int(x):
         client.send(text, thread_id=user.uid, thread_type=ThreadType.USER)
         i += 1
