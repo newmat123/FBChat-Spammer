@@ -2,6 +2,8 @@ from fbchat import Client
 from fbchat.models import *
 import time
 
+#pip install fbchat is needed for this project
+
 #finds and opens my profile
 def findMe():
     global client
@@ -48,7 +50,7 @@ def sendIt():
     x = input("")
 
     print("spaming...")
-    
+
     i = 0
     while i < int(x):
         client.send(text, thread_id=user.uid, thread_type=ThreadType.USER)
